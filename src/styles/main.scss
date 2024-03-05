@@ -1,0 +1,392 @@
+@import 'inc/variables';
+@import 'inc/fonts';
+@import 'inc/mixins';
+@import 'inc/reset';
+
+@import 'components/header';
+
+// hero start
+.hero{
+    width: 100%;
+    padding-top: 80px;
+    background-image: url('../assets/images/bg.svg');
+    height: 650px;
+    &.dark-theme {
+        /* Specify the background image for dark theme */
+        background-image: url('../assets/images/bg-dark.svg');
+    }
+    .container{
+        @include flex(column, center, center);
+        position: relative;
+        height: 100%;
+        .hero__banner{
+            position: absolute;
+            top: 70px;
+            left: 350px;
+            font-family: JetBrainsMonoBold;
+            color: var(--white);
+            padding: 18px 15px;
+            background-color: var(--secondary-color);
+            border-radius: 10px 10px 0px 10px;
+        }
+        .hero__ellipse{
+            @include center;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1),0px 7px 15px 0px rgba(0, 0, 0, 0.1),0px 27px 27px 0px rgba(0, 0, 0, 0.09),0px 61px 37px 0px rgba(0, 0, 0, 0.05),0px 109px 44px 0px rgba(0, 0, 0, 0.01),0px 170px 48px 0px rgba(0, 0, 0, 0);
+            img{
+                width: 100%;
+            }
+        }
+        .hero__author{
+            font-family: PoppinsBold;
+            color: var(--text-blug-light);
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 36px;
+            letter-spacing: -1px;
+            margin-top: 28px;
+            margin-bottom: -14px;
+        }
+        .hero__title{
+            font-family: PoppinsBold;
+            color: var(--text-dark);
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 60px;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+        .hero__button{
+            font-family: UbuntuMedium;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 30px;
+            letter-spacing: -1.5%;
+            @include center;
+            width: 160px;
+            height: 45px;
+            border-radius: 8px;
+            background: linear-gradient(160.52deg, var(--primary-color) -66.429%,var(--secondary-color) 102.868%);
+            color: var(--text-light);
+            transition: 0.2s ease;
+            &:hover{
+                filter: grayscale(50%);
+            }
+        }
+    }
+}
+// hero end
+
+// about start
+.about{
+    width: 100%;
+    background-image: url('../assets/images/bg.svg');
+    height: 650px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .stat_row{
+            width: 100%;
+            @include grid-container(4, 20px);
+            .about__stat-card{
+                @include center;
+                width: 100%;
+                max-width: 300px;
+                height: 180px;
+                background-color: var(--light);
+                box-sizing: border-box;
+                border: 4px solid var(--light-blug);
+                border-radius: 15px;
+                overflow: hidden;
+                .stat-number{
+                    font-family: UbuntuBold;
+                    color: var(--primary-color);
+                    font-size: 48px;
+                    font-weight: 700;
+                    line-height: 55px;
+                    letter-spacing: -1.5%;
+                }
+                .stat-text{
+                    color: var(--text-dark);
+                    font-family: UbuntuBold;
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 21px;
+                    letter-spacing: -1.5%;
+                }
+            }
+        }
+        .info_row{
+            @include grid-container(2, 20px);
+            .about__info-card{
+                display: flex;
+                flex-direction: column;
+                background-color: var(--light);
+                width: 100%;
+                max-width: 633px;
+                height: 370px;
+                box-sizing: border-box;
+                border: 4px solid var(--light-blug);
+                border-radius: 15px;
+                overflow: hidden;
+                &.ic-info{
+                    @include flex(column, center, flex-start);
+                    padding: 0 40px;
+                    .info-card__title{
+                        font-family: UbuntuBold;
+                        color: var(--text-dark);
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 23px;
+                        letter-spacing: -1.5%;
+                        margin-bottom: 16px;
+                    }
+                    .info-card__text{
+                        font-family: UbuntuRegular;
+                        color: var(--text-blug-light);
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 24px;
+                        letter-spacing: 2.5%;
+                        text-align: left;
+                    }
+                }
+                &.ic-unique{
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+                    padding: 40px;
+                    .ic-systems{
+                        position: absolute;
+                        bottom: 0;
+                        left: 50px;
+                        display: flex;
+                        gap: 20px;
+                        .system-container{
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            flex-direction: column;
+                            gap: 10px;
+                            .system-name{
+                                font-family: UbuntuBold;
+                                color: var(--text-dark);
+                            }
+                            .system{
+                                width: 50px;
+                                border-radius: 10px 10px 0px 0px;
+                                transition: 0.2s ease;
+                                &:hover{
+                                    filter: grayscale(40%);
+                                }
+                            }
+                            #system1{
+                                background-color: var(--primary-color);
+                                height: 150px;
+                            }
+                            #system2{
+                                background-color: var(--secondary-color);
+                                height: 200px;
+                            }
+                            #system3{
+                                background-color: var(--primary-color);
+                                height: 250px;
+                            }
+                        }
+                    }
+                    .ic-system__title{
+                        width: 275px;
+                        font-family: UbuntuBold;
+                        color: var(--text-dark);
+                        font-size: 24px;
+                        font-weight: 700;
+                        line-height: 28px;
+                        letter-spacing: -2.5%;
+                    }
+                }
+            }
+        }
+    }
+}
+// about end
+
+// skills start
+.skills{
+    width: 100%;
+    background-image: url('../assets/images/bg.svg');
+    height: 650px;
+    .container{
+        .skills-card{
+            position: relative;
+            padding: 40px;
+            @include flex(column, flex-start, flex-end);
+            width: 100%;
+            background-color: var(--secondary-color);
+            height: 600px;
+            overflow: hidden;
+            border-radius: 15px;
+            .skills-card__img{
+                position: absolute;
+                bottom: 0;
+                left: 40px;
+                width: 450px;
+            }
+            .skills-card__items{
+                width: 670px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 15px;
+                .item{
+                    @include center;
+                    font-family: PoppinsBold;
+                    padding: 5px 10px;
+                    background-color: var(--white);
+                    border-radius: 7px;
+                    color: var(--secondary-color);
+                    transition: 0.2s ease;
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}
+// skilll end
+
+// projects start
+.projects{
+    width: 100%;
+    background-image: url('../assets/images/bg.svg');
+    height: 650px;
+    .container{
+        .projects__section{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            .projects__card{
+                width: 100%;
+                max-width: 400px;
+                height: 222px;
+                overflow: hidden;
+                border-radius: 20px;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        .projects__pagination{
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .pagination{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                .pages{
+                    display: flex;
+                    align-items: center;
+                    li{
+                        a{
+                            display: block;
+                            font-family: UbuntuBold;
+                            color: var(--text-dark);
+                            background-color: var(--light-blug);
+                            padding: 5px 12px;
+                            &.active{
+                                background-color: var(--secondary-color);
+                                color: var(--white);
+                                border-radius: 5px;
+                                padding: 7px 12px;
+                            }
+                        }
+                        &:first-child{
+                            border-radius: 5px 0px 0px 5px;
+                            overflow: hidden;
+                        }
+                        &:last-child{
+                            border-radius: 0px 5px 5px 0px;
+                            overflow: hidden;
+                        }
+                    }
+                }
+                .page-sliders{
+                    @include center;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    background-color: var(--secondary-color);
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+// projects end
+
+// questions start
+.questions{
+    width: 100%;
+    background-image: url('../assets/images/bg.svg');
+    height: 650px;
+    .container{
+        .questions__cards{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            .questions__card{
+                width: 100%;
+                max-width: 630px;
+                height: 420px;
+                background-color: var(--light-blug);
+                border-radius: 15px;
+                overflow: hidden;
+                padding: 30px;
+                &.qc-unique{
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    padding-left: 60px;
+                    .card__title{
+                        width: 300px;
+                        font-family: UbuntuBold;
+                        color: var(--text-dark);
+                        font-size: 48px;
+                        font-weight: 700;
+                        line-height: 50px;
+                        letter-spacing: -1.5px;
+                        text-align: left;
+                    }
+                    img{
+                        position: absolute;
+                        top: 25%;
+                        right: -25%;
+                        width: 410px;
+                    }
+                }
+            }
+        }
+    }
+}
+// questions end
+
+@import 'components/footer';
+
+
+@import 'components/responsive';
+@import 'components/animations';
+

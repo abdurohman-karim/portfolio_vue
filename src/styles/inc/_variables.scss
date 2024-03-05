@@ -1,0 +1,58 @@
+:root {
+    /* Primary Colors */
+    --primary-color: #009EC0;
+    --primary-dark: #006075;
+    --primary-light: #00d0ff;
+
+    /* Secondary Colors */
+    --secondary-color: #642CA9;
+    --secondary-dark: #410e80;
+    --secondary-light: #7f52b6;
+
+    /* Accent Colors */
+    --accent-color: #e67e22;
+    --accent-dark: #d35400;
+    --accent-light: #f39c12;
+
+    // text-colors
+    --text-light: #ffffff;
+    --text-dark: #030712;
+    --text-blug-light: #626262;
+    --text-blug-dark: #5A6585;
+
+    /* Neutral Colors */
+    --light: #ffffff;
+    --dark: #030712;
+    --light-blug: #E8E8E8;
+    --dark-blug: #161B2A;
+
+    // Not changable
+    --white: #ffffff;
+    --black: #030712;
+
+    /* Additional Colors */
+    --success-color: #4caf50;
+    --error-color: #e74c3c;
+    --info-color: #3498db;
+    --warning-color: #ffb949;
+    --icon: #ACACAC;
+}
+
+.dark-theme {
+    --light: #030712;
+    --text-dark: #ffffff;
+    --text-blug-dark: #ACACAC;
+    --light-blug: #161B2A;
+    /* ... other variables ... */
+}
+
+.section {
+    width: 100%;
+    height: 650px;
+    background-image: url('../assets/images/bg.svg');
+    transition: background-image 0.3s ease; /* Optional: Add a smooth transition effect */
+    &.dark-theme {
+        background-image: url('../assets/images/bg-dark.svg');
+    }
+}
+  
